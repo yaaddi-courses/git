@@ -38,3 +38,4 @@ id,title,description,min_level,section,image,section_image
 37,"Submodules, Briefly","Including one Git repository inside another, and why it's trickier than it sounds.",1,Beyond the Basics,unit37.png,
 38,Handling Large Files With Git LFS,"Why Git struggles with huge binary files, and the extension that fixes it.",1,Beyond the Basics,unit38.png,
 39,How Git Actually Stores Your Data,"Blobs, trees, and commits — the simple data structure underneath every Git command you've learned.",1,Beyond the Basics,unit39.png,
+40,Recap: Key Terms,Quick matching practice that revisits the key terms from earlier decks.,1,Review,unit40.png,
