@@ -1,10 +1,10 @@
 id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,explanation
-1,1,select_blank,main,,Version control tracks ___ to your files.,changes|nothing|only names|only size,0,,,
+1,1,select_blank,main,,Version control tracks ___ to your files.,changes|nothing|only names|only size,0,,,"Version control records each change to your files, so you can see what happened and go back to earlier versions."
 2,1,true_false,exercise,1,Version control shows when a change happened.,,true,,,Every recorded change carries a timestamp of when it happened.
-3,1,multiple_choice,exercise,1,Which is a real VCS benefit?,Faster code|Tracks changes|Auto-fixes bugs|Skips testing,1,,,
-5,1,true_false,exercise,1,Recovering deleted work is hard without version control.,,true,,,
-6,1,multi_select,exercise,1,Which are real version-control benefits?,See changes|Revert versions|Auto-writes docs|Tracks authors,0|1|3,,,
-7,1,select_blank,exercise,1,You can see ___ changed a file.,who|what|when|where,0,,,
+3,1,multiple_choice,exercise,1,Which is a real VCS benefit?,Faster code|Tracks changes|Auto-fixes bugs|Skips testing,1,,,"Tracking changes is the core benefit: every edit is recorded, so nothing is silently lost or overwritten."
+5,1,true_false,exercise,1,Recovering deleted work is hard without version control.,,true,,,"True. Without version control there is no saved history to restore from, so deleted work is often gone for good."
+6,1,multi_select,exercise,1,Which are real version-control benefits?,See changes|Revert versions|Auto-writes docs|Tracks authors,0|1|3,,,"All three are real benefits: you can see changes, revert to older versions, and know who made each change."
+7,1,select_blank,exercise,1,You can see ___ changed a file.,who|what|when|where,0,,,"Because Git records an author for every change, you can see who changed a file, not just what changed."
 8,1,select_blank,main,,Every Git ___ holds the full project history.,clone|branch|tag|remote,0,,,"This is what makes Git ""distributed"" — there's no single machine that alone holds the real history."
 9,1,multiple_choice,exercise,8,What's distributed VCS's main advantage?,Less storage|Works offline|No conflicts|No server,1,,,"Because every developer gets a full copy of the repository, you can commit changes and work entirely without an internet connection until you reconnect."
 10,1,true_false,exercise,8,A down server blocks Git history access.,,false,,,"Every clone already has the full history — the server going down blocks sharing, not working."
@@ -127,7 +127,7 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 130,13,true_false,exercise,129,A branch copies all your project files.,,false,,,"It just points at a commit, so the files belong to the commit, not the branch."
 131,13,select_blank,exercise,129,A branch points at one ___.,commit|folder|file,0,,,Branches always point specifically at a single commit hash. This commit represents the complete snapshot of all files and changes that occurred at that moment in time.
 132,13,multiple_choice,exercise,129,What happens to a branch label after a commit?,Moves forward|Stays put|Disappears,0,,,"When you successfully make a new commit, Git automatically updates the branch label to point directly at that brand-new commit hash, causing it to move forward along the history line."
-133,14,true_false,preview,134,Creating a branch does not switch to it.,,true,,,
+133,14,true_false,preview,134,Creating a branch does not switch to it.,,true,,,"True. `git branch` only creates the branch; you must switch to it yourself, for example with `git switch`."
 134,14,code_fill,main,,Complete: create a branch called feature.,git branch ___|feature,,,,"The correct syntax requires the word 'branch' immediately after `git` and before the name you want. So, the full command is `git branch feature`. It was an older command used to switch between branches or restore files."
 135,14,true_false,exercise,134,`git branch` feature switches you onto feature.,,false,,,It only creates the label; you stay on your current branch until you switch.
 136,14,select_blank,exercise,134,`git ___` <name> creates a new branch.,branch|switch|commit,0,,,"The '`git branch` <name>' command simply creates the pointer to a new branch, but you need 'git switch' or '`git checkout`' to actually move your working directory onto it."
@@ -144,7 +144,7 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 147,15,true_false,preview,148,`git merge` combines another branch into yours.,,true,,,This is correct; merging takes all the commits and history from the source branch and integrates them into your current working branch.
 148,15,code_fill,main,,Complete: merge feature into your current branch.,git merge ___|feature,,,,"You need to specify the source branch name, so you run `git merge feature`. This tells Git exactly which set of changes you want to integrate into your current location."
 149,15,true_false,exercise,148,`git merge` combines two branches into one history.,,true,,,"That's right; the entire point of merging is to combine two separate histories into one cohesive timeline, resulting in a merge commit."
-150,15,select_blank,exercise,148,`git ___` <branch> brings its commits into yours.,merge|branch|switch,0,,,
+150,15,select_blank,exercise,148,`git ___` <branch> brings its commits into yours.,merge|branch|switch,0,,,`git merge <branch>` brings the commits from that branch into the branch you are currently on.
 151,15,multiple_choice,exercise,148,Which branch do you merge into?,Current one|Feature one|Remote one,0,,,"You always perform a merge *into* your current branch, as that is the target location where all incoming changes will be applied."
 152,15,true_false,preview,153,Fast-forward merge happens when nothing has diverged.,,true,,,"That's correct; a fast-forward merge only happens when the history of one branch hasn't diverged from the other, so no complex merging logic is needed."
 153,15,multiple_choice,main,,When does Git do a fast-forward merge?,No divergence|Both diverged|Files conflict,0,,,"A fast-forward merge occurs when one branch is simply ahead of the other and their histories haven't branched apart yet. If they have diverged, a full merge commit is required."
@@ -173,12 +173,12 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 176,18,multiple_choice,exercise,173,Combining several commits into one is called what?,Squashing|Rebasing|Merging,0,,,"While rebasing involves rewriting history, the specific action of combining multiple commits into a single unit is called squashing."
 177,19,true_false,preview,178,A Git remote is a linked repository.,,true,,,Correct; think of it as a pointer to another repository (like on GitHub) that allows you to push and pull changes between machines.
 178,19,multiple_choice,main,,What is a remote in Git?,Linked repo|A branch|A commit,0,,,"A remote refers to an external repository location, essentially a linked copy that allows you to collaborate with others over networks."
-179,19,true_false,exercise,178,The default remote name is origin.,,true,,,
-180,19,select_blank,exercise,178,Git names the default remote ___.,origin|source|main,0,,,
-181,19,multiple_choice,exercise,178,Where does a remote usually live?,A server|Your disk|A commit,0,,,
-182,20,true_false,preview,183,`git push` sends local commits to a remote.,,true,,,
-183,20,multiple_choice,main,,Which command sends your commits to a remote?,`git push`|`git pull`|`git fetch`,0,,,
-184,20,true_false,exercise,183,`git pull` brings remote commits into your branch.,,true,,,
+179,19,true_false,exercise,178,The default remote name is origin.,,true,,,"True. When you clone a repository, Git names the remote it came from `origin` by default."
+180,19,select_blank,exercise,178,Git names the default remote ___.,origin|source|main,0,,,`origin` is the default name Git gives the remote a repository was cloned from.
+181,19,multiple_choice,exercise,178,Where does a remote usually live?,A server|Your disk|A commit,0,,,"A remote is a copy of the repository hosted elsewhere, usually on a server such as GitHub."
+182,20,true_false,preview,183,`git push` sends local commits to a remote.,,true,,,True. `git push` uploads your local commits to the remote so others can get them.
+183,20,multiple_choice,main,,Which command sends your commits to a remote?,`git push`|`git pull`|`git fetch`,0,,,`git push` sends your local commits to a remote. `git pull` does the reverse direction.
+184,20,true_false,exercise,183,`git pull` brings remote commits into your branch.,,true,,,True. `git pull` fetches new commits from the remote and merges them into your current branch.
 185,20,select_blank,exercise,183,`git ___` sends your local commits to the remote.,push|pull|clone,0,,,You use `git push` when you want to send your completed local commits up to the shared remote server. Git pull is used for downloading changes from others.
 186,20,multiple_choice,exercise,183,What does `git pull` do after downloading?,Merges in|Deletes it|Ignores it,0,,,"Git pull first downloads the remote changes, and then it automatically attempts to merge those new commits into your current local branch."
 187,21,true_false,preview,188,`git fetch` downloads commits without changing your branch.,,true,,,That's right; fetch only downloads information about what others have done without affecting your current local code or pointer.
@@ -206,8 +206,8 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 209,25,true_false,exercise,208,Git Flow uses long-lived branches for scheduled releases.,,true,,,"That’s correct; Git Flow relies on dedicated, long-lived branches for releases, which is its defining characteristic compared to continuous integration models."
 210,25,select_blank,exercise,208,A ___ branch isolates one change at a time.,feature|trunk|release,0,,,A feature branch is specifically designed to isolate a single piece of work so that it doesn't break the main codebase while you are developing it.
 211,25,multiple_choice,exercise,208,What is a feature branch used for?,One change|Every release|Nothing,0,,,A feature branch is used to isolate a single change or new function so you can develop it without risking the stability of your main codebase.
-212,26,true_false,preview,213,A .gitignore file excludes files from tracking.,,true,,,
-213,26,multiple_choice,main,,What does a .gitignore file do?,Excludes files|Deletes files|Encrypts files,0,,,
+212,26,true_false,preview,213,A .gitignore file excludes files from tracking.,,true,,,"True. Files matching patterns in `.gitignore` are left out of tracking, so they never show up as changes."
+213,26,multiple_choice,main,,What does a .gitignore file do?,Excludes files|Deletes files|Encrypts files,0,,,"A `.gitignore` file lists patterns for files Git should ignore, such as build output or secrets."
 214,26,true_false,exercise,213,"Secrets belong in .gitignore, not in a commit.",,true,,,"If you commit secrets, they are permanently recorded in Git's history, making them impossible to truly delete. They must be listed in .gitignore instead."
 215,26,select_blank,exercise,213,Git reads ignore patterns from ___.,.gitignore|.gitconfig|README,0,,,"The specific file that tells Git which files or patterns to ignore is always named .gitignore, keeping your repository clean and focused on source code."
 216,26,multiple_choice,exercise,213,What is a common thing to ignore?,Build output|Source code|Commit history,0,,,Build output (like compiled binaries) should be ignored because they are generated every time you compile the project and aren't part of the actual source code that needs version control.
@@ -286,7 +286,7 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 289,3,select_blank,exercise,285,`git init` is ___ on an existing project.,safe|risky|forbidden,0,,,"It is safe to run; while it creates the `.git` folder, it doesn't alter or delete any of your actual project source code or working files."
 290,3,true_false,exercise,21,`git init` works inside an existing folder.,,true,,,You run it in the folder you want to turn into a repository.
 291,3,select_blank,exercise,21,`git ___` starts a new repository.,init|clone|add|log,0,,,"You use `git init` when you want Git to start tracking a brand new project in your current folder, creating the necessary repository files."
-292,16,order,exercise,163,Order how you resolve a merge conflict.,Edit the conflicted file|git add|git commit,,,,"You must first manually edit the conflicted file, removing all conflict markers and leaving only the correct code. After resolving it, use `git add` to stage your clean version, and finally, commit the merge using `git commit`."
+292,16,order,exercise,163,Order the steps to resolve a merge conflict.,Edit the conflicted file|git add|git commit,,,,"You must first manually edit the conflicted file, removing all conflict markers and leaving only the correct code. After resolving it, use `git add` to stage your clean version, and finally, commit the merge using `git commit`."
 293,30,order,exercise,233,Order a git bisect session.,git bisect start|git bisect bad|git bisect good,,,,"You must first run git bisect start to initiate the process, followed by defining your initial known-bad and known-good commits to establish the search boundaries."
 294,32,order,exercise,243,Order a stash-and-switch-back workflow.,git stash|Handle the urgent task|git stash pop,,,,"The correct order is: first, you `git stash` to save your current changes; next, you switch branches and handle the task; finally, you use `git stash pop` to reapply those saved changes."
 295,17,order,exercise,168,Order replaying your branch on top of main.,git switch feature|git rebase main,,,,"First, switch to your feature branch (`git switch feature`), and then run `git rebase main` from there to replay those commits cleanly on top of the latest changes in main."
