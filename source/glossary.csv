@@ -80,3 +80,21 @@ user.email,The Git setting that holds the email recorded on your commits.,https:
 --force-with-lease,A safer force push that fails if someone else has pushed to the branch since you last fetched.,https://git-scm.com/docs/git-push,
 --dry-run,Shows what a command would do without actually doing it.,https://git-scm.com/docs/git-push,
 -v,"Shows more detail, such as the commit each branch points at.",https://git-scm.com/docs/git-branch,
+--system,The git config flag that writes a setting for every user on the machine.,https://git-scm.com/docs/git-config#Documentation/git-config.txt---system,19
+--all,"A flag that applies a command to every branch, ref or file instead of just the current one.",https://git-scm.com/docs/git-log#Documentation/git-log.txt---all,19
+--stat,The git log and diff flag that summarises which files changed and by how many lines.,https://git-scm.com/docs/git-diff,81
+--log,A git merge flag that adds one-line summaries of the merged commits to the merge message.,https://git-scm.com/docs/git-merge,91
+--force,A flag that makes Git carry out a command even when it would normally refuse for safety.,https://git-scm.com/docs/git-push#Documentation/git-push.txt--f,96
+--fix,Not a real option of git commit; the correct flag for changing the last commit is --amend.,https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---amend,106
+--redo,"Not a real option of git commit; it is a made-up flag, unlike the real --amend.",https://git-scm.com/docs/git-commit#Documentation/git-commit.txt---amend,106
+-x,A flag that does not open the interactive commit list in git rebase; -i does that.,https://git-scm.com/docs/git-rebase#Documentation/git-rebase.txt---interactive,175
+README,A file at the top of a project that explains what it is and how to use it.,https://en.wikipedia.org/wiki/README,215
+-Z,Not the git log option for searching changes; the real pickaxe search flag is -S.,https://git-scm.com/docs/git-log,225
+--force-with-___,"The safer git push option --force-with-lease, which refuses to overwrite work you have not seen.",https://git-scm.com/docs/git-push,255
+Version-control,The hyphenated form of version control: a system that records every change to files over time.,https://en.wikipedia.org/wiki/Version_control,1
+Repositories,Storage for a project's files together with their complete change history.,https://en.wikipedia.org/wiki/Repository_(version_control),34
+branches,Lightweight movable pointers to commits that let you work on separate lines of development.,https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell,8
+tracking branches,Local branches that are linked to a remote branch so push and pull know where to go.,https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches,192
+forking,Copying someone else's repository to your own account so you can change it freely.,https://en.wikipedia.org/wiki/Fork_(software_development),197
+blobs,Git objects that store the contents of a single file.,https://git-scm.com/book/en/v2/Git-Internals-Git-Objects,277
+tree objects,Git objects that store a folder's structure by listing its files and subfolders.,https://git-scm.com/book/en/v2/Git-Internals-Git-Objects,278
