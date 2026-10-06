@@ -308,3 +308,62 @@ id,unit_id,type,role,related_main_id,prompt,options,correct_index,image,audio,ex
 311,40,match_pairs,exercise,306,Link every term to its idea.,git tag↔Names a commit|git stash↔Sets changes aside|git reflog↔Local movement log|submodule↔Repo inside repo,,,,Each term is paired with its plain-language meaning.
 312,40,match_pairs,exercise,306,What does each term mean?,submodule↔Repo inside repo|Git LFS↔Large file storage|blob↔Stores file contents|tree object↔Stores folder structure,,,,Each term is paired with its plain-language meaning.
 313,40,true_false,exercise,306,distributed means sets Git settings.,,false,,,No: distributed means full history everywhere.
+314,1,multiple_choice,exam,,Version control tracks changes to your:,Files|Passwords|Monitor,0,,,It lets you see what happened and return to earlier versions.
+315,1,true_false,exam,,Only one machine holds the real Git history.,,false,,,"Every clone stores the full history, which is what makes Git distributed."
+316,1,multiple_choice,exam,,A remote usually lives on a:,Backup disk|Text editor|Server,2,,,"It is a copy of your repository somewhere else, often on GitHub."
+317,2,multiple_choice,exam,,`--global` makes a Git setting apply:,Everywhere|Only today|Nowhere,0,,,The setting then applies on this machine for all your repositories.
+318,20,multiple_choice,exam,,Which command turns a folder into a repository?,`git push`|`git init`|`git clone`,1,,,`git init` creates the hidden `.git` folder.
+319,3,true_false,exam,,`git init` deletes your existing files.,,false,,,It leaves them untouched and simply starts tracking.
+320,5,multiple_choice,exam,,Which command copies a remote repository locally?,`git init`|`git add`|`git clone`,2,,,`git clone` downloads the whole history and structure.
+321,4,multiple_choice,exam,,The staging area holds changes that are:,Discarded|Pending|Published,1,,,It is the waiting room where you choose what goes into the next commit.
+322,5,multiple_choice,exam,,Which command stages a file?,`git log`|`git init`|`git add`,2,,,`git add file.txt` stages that file for the next commit.
+323,31,multiple_choice,exam,,Which command lists staged files?,`git status`|`git clone`|`git tag`,0,,,"`git status` shows the current state, including the staging area."
+324,5,true_false,exam,,Staging with `git add .` includes every changed file.,,true,,,The dot stands for everything in the current location.
+325,6,multiple_choice,exam,,Which flag supplies a commit message?,`--amend`|`--staged`|`-m`,2,,,"`git commit -m ""message""` commits with the message you give."
+326,6,true_false,exam,,Commit messages should describe what was done.,,false,,,"Use the imperative mood, like ""Add feature X""."
+327,8,multiple_choice,exam,,Which command lists your commit history?,`git add`|`git log`|`git diff`,1,,,`git log` shows the commits in order.
+328,7,multiple_choice,exam,,Which flag shortens each log entry?,`--staged`|`--hard`|`--oneline`,2,,,`--oneline` prints one line per commit.
+329,8,multiple_choice,exam,,`git diff` shows changes that are:,Unstaged|Published|Archived,0,,,It compares your working directory with what is staged.
+330,9,multiple_choice,exam,,Which flag diffs only staged changes?,`--force`|`--oneline`|`--staged`,2,,,`git diff --staged` isolates what is ready to commit.
+331,9,multiple_choice,exam,,`git restore --staged` removes a file from:,The repository|Your disk|Staging,2,,,Your edits stay in the working directory.
+332,9,true_false,exam,,`git restore` can discard unstaged edits.,,true,,,It reverts the file to its committed state.
+333,10,multiple_choice,exam,,Which flag changes your last commit?,`--oneline`|`--amend`|`--staged`,1,,,`git commit --amend` replaces the latest commit.
+334,11,multiple_choice,exam,,`git revert` creates a:,Fresh clone|New branch|New commit,2,,,The new commit undoes the changes without rewriting history.
+335,27,multiple_choice,exam,,"After a teammate pulled a bad commit, use:",`git revert`|`git reset`|`git clean`,0,,,Reverting keeps the shared history intact.
+336,12,multiple_choice,exam,,`git reset` moves your branch:,Author|Pointer|Remote,1,,,"It moves the branch pointer, backward or forward."
+337,12,multiple_choice,exam,,Which `git reset` mode discards your work?,`--hard`|`--mixed`|`--soft`,0,,,`--hard` throws away your working changes too.
+338,13,multiple_choice,exam,,A Git branch is really a:,Movable label|Complete copy|Backup folder,0,,,"It points at a commit, so creating one copies nothing."
+339,13,true_false,exam,,Creating a branch copies every file.,,false,,,A branch is only a label pointing to a commit.
+340,32,multiple_choice,exam,,Which command creates a branch?,`git merge`|`git stash`|`git branch`,2,,,`git branch feature` creates the branch without switching.
+341,14,true_false,exam,,Creating a branch also switches to it.,,false,,,Use `git switch` to move onto it.
+342,14,multiple_choice,exam,,Which flag creates and switches at once?,`-S`|`-c`|`-m`,1,,,`git switch -c feature` does both in one step.
+343,15,multiple_choice,exam,,`git merge feature` combines it into your:,Remote|Stash|Current branch,2,,,It brings the other branch's changes into where you are.
+344,15,multiple_choice,exam,,A fast-forward merge needs no:,Divergence|Commit message|Branch name,0,,,It happens when one branch is simply ahead of the other.
+345,15,multiple_choice,exam,,A three-way merge commit has how many parents?,Three|One|Two,2,,,It joins the tips of the two branches being merged.
+346,16,multiple_choice,exam,,A merge conflict means both branches changed:,Nothing|The remote|One line,2,,,Git cannot choose between two changes to the same lines.
+347,17,multiple_choice,exam,,`git rebase main` replays your commits:,On main|On remote|In stash,0,,,Your commits are placed after main's latest commit.
+348,18,multiple_choice,exam,,Interactive rebase lets you:,Merge branches|Edit commits|Create remotes,1,,,"You can squash, drop or amend old commits."
+349,19,multiple_choice,exam,,A remote is a linked:,Folder name|Text editor|Repository,2,,,It is a copy that lets you collaborate over a network.
+350,20,multiple_choice,exam,,Which command sends commits to a remote?,`git push`|`git fetch`|`git init`,0,,,`git pull` goes the other direction.
+351,21,multiple_choice,exam,,`git fetch` changes your branch:,Twice|Never|Always,1,,,It downloads data without updating your working branch.
+352,21,true_false,exam,,`git fetch` merges remote changes into your branch.,,false,,,Fetch only downloads; pull downloads and merges.
+353,22,multiple_choice,exam,,A tracking branch remembers its:,Remote branch|Author history|Commit size,0,,,It knows where to look for updates.
+354,23,multiple_choice,exam,,A fork is your own copy of a:,Commit history|Repository|Branch name,1,,,It lives under your profile and lets you propose changes.
+355,24,multiple_choice,exam,,Reviewers prefer commits that are:,"Huge, unfocused|Mixed|Small, focused",2,,,They can grasp the purpose without getting lost.
+356,24,true_false,exam,,One commit should mix several unrelated fixes.,,false,,,"Small, focused commits are easier to review."
+357,25,multiple_choice,exam,,Which strategy merges tiny changes constantly?,Fork-only|Trunk-based|Release-only,1,,,Developers merge small changes into the main line often.
+358,26,multiple_choice,exam,,A `.gitignore` file lists files Git should:,Delete|Encrypt|Ignore,2,,,Build output and secrets are typical entries.
+359,27,multiple_choice,exam,,`git clean -f` deletes only:,Untracked files|Staged commits|Remote branches,0,,,The force flag is required because clean is safe by default.
+360,28,multiple_choice,exam,,`git log -S` finds commits touching:,That branch|That text|That author,1,,,It searches for changes involving the given text.
+361,29,multiple_choice,exam,,"`git blame` shows, per line, the:",File size|Branch name|Last commit,2,,,It tells you which commit last changed that line.
+362,30,multiple_choice,exam,,`git bisect` finds the commit that:,Broke things|Fixed things|Added files,0,,,It uses binary search to narrow down the culprit.
+363,31,multiple_choice,exam,,`git tag` marks a commit with a:,Backup|Name|Remote,1,,,A tag like v2.0 labels a release.
+364,32,multiple_choice,exam,,`git stash` sets aside:,Committed history|Old branches|Uncommitted work,2,,,You can switch branches cleanly and come back later.
+365,32,true_false,exam,,`git stash` permanently deletes your changes.,,false,,,It shelves them temporarily for later use.
+366,33,multiple_choice,exam,,`git cherry-pick` copies how many commits?,None|One|All,1,,,It applies a single commit onto your current location.
+367,34,multiple_choice,exam,,Which force-push option is safer?,`--force`|`--hard`|`--force-with-lease`,2,,,It checks that nobody else updated the remote branch first.
+368,35,multiple_choice,exam,,`git reflog` records where your:,Pointers moved|Branches changed|Users logged,0,,,It helps recover commits that seem lost.
+369,36,true_false,exam,,Most everyday Git mistakes have known fixes.,,true,,,You do not need to panic when something goes wrong.
+370,37,multiple_choice,exam,,A submodule locks in one exact:,Branch|Contributor|Commit,2,,,The parent repository tracks that specific commit hash.
+371,38,multiple_choice,exam,,Git LFS replaces a large file with a:,Pointer|Archive|Snapshot,0,,,The pointer says where to find the large object.
+372,39,multiple_choice,exam,,"In Git's object model, a blob stores:",Commit messages|File contents|Directories,1,,,Trees organise contents into directories.
