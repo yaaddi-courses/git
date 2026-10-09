@@ -97,4 +97,4 @@ branches,Lightweight movable pointers to commits that let you work on separate l
 tracking branches,Local branches that are linked to a remote branch so push and pull know where to go.,https://git-scm.com/book/en/v2/Git-Branching-Remote-Branches,192
 forking,Copying someone else's repository to your own account so you can change it freely.,https://en.wikipedia.org/wiki/Fork_(software_development),197
 blobs,Git objects that store the contents of a single file.,https://git-scm.com/book/en/v2/Git-Internals-Git-Objects,277
-tree objects,Git objects that store a folder's structure by listing its files and subfolders.,https://git-scm.com/book/en/v2/Git-Internals-Git-Objects,278
+tree objects,Git objects that store a folder's structure by listing its files and subfolders.,https://git-scm.com/docs/gitglossary#def_tree_object,278
