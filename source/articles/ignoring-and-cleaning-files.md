@@ -3,24 +3,24 @@
 **Covers:** README, git clean, --dry-run
 
 ## Not everything belongs in history {#overview}
-A project folder holds more than source files. Build output, temporary files, editor settings and passwords all end up there. Saving them pollutes the history, makes it large, and in the case of passwords is a security problem that lasts, because history is hard to erase. Two tools keep the folder tidy: a list of patterns that Git ignores, and a command that removes what is not tracked.
+Look inside any project folder after a week of work. Next to the source files you find build output, temporary files, editor settings and sometimes passwords. Saving them pollutes the history and makes it large. In the case of passwords, it is a security problem that lasts, because history is hard to erase. Two tools keep the folder tidy: a list of patterns that Git ignores, and a command that removes what Git does not track. We will also meet the README, the document that explains the project to newcomers.
 
 ## The .gitignore file {#gitignore}
-A file named `.gitignore` in the project lists patterns of files that Git should pretend not to see. One pattern per line: `*.log` ignores all log files, `build/` ignores a folder, `.env` ignores a settings file with secrets. Lines starting with `#` are comments, and a leading `!` makes an exception. Commit this file, so that every clone has the same rules.
+A file named `.gitignore` in the project lists patterns of files that Git should pretend not to see. You write one pattern per line: `*.log` ignores all log files, `build/` ignores a folder, and `.env` ignores a settings file with secrets. Lines starting with `#` are comments, and a leading `!` makes an exception. Commit this file, so that every clone has the same rules.
 
-An important limit: ignoring affects only files that are not tracked yet. A file that was already committed stays tracked, and changing `.gitignore` does not remove it. To stop tracking it, use `git rm --cached file`.
+There is one limit to remember. Ignoring affects only files that are not tracked yet. A file that was already committed stays tracked, and changing `.gitignore` does not remove it. To stop tracking it, use `git rm --cached file`.
 
 ## README {#readme}
-A README is the first document of a project, kept at the top of the folder, telling a newcomer what the project is for and how to start. Hosting sites show it on the project's front page. It usually has a title, a short description, how to install and run, and where to ask for help. Plain text or Markdown both work.
+The README is the first document of a project, kept at the top of the folder. It tells a newcomer what the project is for and how to start, and hosting sites show it on the project's front page. It usually has a title, a short description, how to install and use the project, and where to ask for help. Plain text and Markdown both work.
 
 ## git clean {#git-clean}
-`git clean` deletes untracked files from the Working Directory, files that Git is not tracking at all. It never touches tracked files. Because the deleted files were never saved, they cannot be recovered. By default, it refuses to run unless you add `-f`. Folders need `-d`. Ignored files are left unless you add `-x`.
+`git clean` deletes untracked files from your Working Directory, meaning files that Git is not tracking at all. It never touches tracked files. Because the deleted files were never saved, you cannot recover them. By default, it refuses to act unless you add `-f`. Folders need `-d`, and ignored files stay unless you add `-x`.
 
 ## --dry-run {#dry-run}
-`--dry-run`, or `-n`, shows what a command would do without doing it. For `git clean`, it prints the list of files that would be removed, and removes none. It should be your first step every time.
+Given that deletion is final, you want a preview. The option `--dry-run`, or `-n`, shows what a command would do without doing it. For `git clean`, it prints the list of files that would be removed, and removes none. Make it your first step every time.
 
 ## A worked example {#example}
-Your project folder after a week of work:
+Here is a project folder after a week of work:
 
 ```bash
 git status --short
@@ -47,9 +47,9 @@ Would remove notes-draft.txt
 Would remove scratch/
 ```
 
-Notice what the list reveals: `notes-draft.txt` would go as well. The preview just saved your draft.
+Look at what the list tells you: `notes-draft.txt` would go as well. The preview saved your draft.
 
-Step 2. Save the draft by staging it, and then clean the rest:
+Step 2. Protect the draft by staging it, and then clean the rest:
 
 ```bash
 git add notes-draft.txt
@@ -66,7 +66,7 @@ Step 3. Stop the log files from ever appearing again:
 scratch/
 ```
 
-After committing `.gitignore`, `git status` stays quiet about both.
+After you commit `.gitignore`, `git status` stays quiet about both.
 
 Step 4. Make sure a README exists:
 
@@ -78,7 +78,7 @@ Plain-text recipes for the family cookbook.
 Open any `.txt` file in the `recipes` folder.
 ```
 
-Count the effect. A repository that accidentally stores one 200 MB build folder forces every clone, forever, to download 200 MB. With a one-line ignore rule, it never happens.
+Let's count the effect. A repository that accidentally stores one 200 MB build folder forces every clone, forever, to download 200 MB. With a one-line ignore rule, it never happens.
 
 | Need | Tool |
 |---|---|
@@ -87,10 +87,12 @@ Count the effect. A repository that accidentally stores one 200 MB build folder 
 | Explain the project | README |
 
 ## A common mistake {#mistake}
-Running `git clean -f` without the preview and losing a file you meant to keep. Always run with `--dry-run` first. Another mistake is committing a secret and then adding it to `.gitignore`. It is already in the history. Remove the secret, and change it, because anyone with a copy of the history has it.
+A common slip is running `git clean -f` without the preview and losing a file you meant to keep. Always add `--dry-run` first.
+
+Another slip is committing a secret and then adding it to `.gitignore`. By then it is already in the history. Remove the secret and change it, because anyone with a copy of the history has it.
 
 ## Key points {#key-points}
 - `.gitignore` keeps listed patterns out of Git's sight, for files not yet tracked.
 - `git clean` deletes untracked files for good. Preview with `--dry-run`.
 - A README says what the project is and how to use it.
-- A secret that was committed once must be replaced, not just ignored.
+- A secret that was committed once must be replaced, not only ignored.
