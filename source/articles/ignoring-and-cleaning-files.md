@@ -1,6 +1,6 @@
 # Ignoring files, README and cleaning untracked files
 
-**Covers:** README, git clean, --dry-run
+**Covers:** .gitignore, README, git clean, --dry-run
 
 ## Not everything belongs in history {#overview}
 Look inside any project folder after a week of work. Next to the source files you find build output, temporary files, editor settings and sometimes passwords. Saving them pollutes the history and makes it large. In the case of passwords, it is a security problem that lasts, because history is hard to erase. Two tools keep the folder tidy: a list of patterns that Git ignores, and a command that removes what Git does not track. We will also meet the README, the document that explains the project to newcomers.

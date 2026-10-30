@@ -98,3 +98,4 @@ tracking branches,Local branches that are linked to a remote branch so push and 
 forking,Copying someone else's repository to your own account so you can change it freely.,,197,forks-pull-requests-and-workflows#forking
 blobs,Git objects that store the contents of a single file.,https://git-scm.com/book/en/v2/Git-Internals-Git-Objects,277,submodules-lfs-and-objects#blob
 tree objects,Git objects that store a folder's structure by listing its files and subfolders.,https://git-scm.com/docs/gitglossary#def_tree_object,278,submodules-lfs-and-objects#tree-object
+.gitignore,"A file listing patterns of files that Git should leave out of tracking, such as logs and secrets.",https://git-scm.com/docs/gitignore,212,ignoring-and-cleaning-files#gitignore
