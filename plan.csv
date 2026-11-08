@@ -1,0 +1,58 @@
+section,deck,pack,level,keywords,terms,kind,main_card_id
+Getting Started,What Version Control Actually Solves,Version control tracks ___ to your files.,1,Version control,Version control,teach,1
+Getting Started,What Version Control Actually Solves,Every Git ___ holds the full project history.,1,distributed|Repository|git clone|branch|remote,distributed|Repository|git clone|branch|remote,teach,8
+Getting Started,What Version Control Actually Solves,Where does a remote usually live?,1,Where does a remote usually live?,,teach,301
+Getting Started,Installing and Setting Up Git,Complete: set your Git username globally.,1,git config,git config,teach,14
+Getting Started,Starting a Repository,Complete: turn this folder into a repo.,1,git init,git init,teach,21
+Getting Started,Starting a Repository,Complete: copy a remote repo locally.,1,origin,origin,teach,27
+Getting Started,Starting a Repository,git init creates a hidden ___ folder.,1,git init creates a hidden ___ folder.,,teach,283
+Getting Started,Starting a Repository,git init leaves your existing files ___.,1,git init leaves your existing files ___.,,teach,285
+The Core Workflow,"The Three Areas: Working, Staged, Committed",Which Git area holds an about-to-save change?,1,Working Directory|Staging Area,Working Directory|Staging Area,teach,39
+The Core Workflow,Tracking and Staging Changes,Complete: stage a single file.,1,git add,git add,teach,49
+The Core Workflow,Tracking and Staging Changes,Which command shows staged files?,1,git status|git log,git status|git log,teach,54
+The Core Workflow,Tracking and Staging Changes,Complete: stage every changed file.,1,Complete: stage every changed file.,,teach,59
+The Core Workflow,Committing Snapshots,Complete: commit with a message flag.,1,git commit,git commit,teach,64
+The Core Workflow,Committing Snapshots,Good commit messages use the ___ mood.,1,imperative mood,imperative mood,teach,69
+The Core Workflow,Reading Your History,Which command lists your commit history?,1,Which command lists your commit history?,,teach,74
+The Core Workflow,Reading Your History,"Complete: show history, one line each.",2,"Complete: show history, one line each.",,teach,79
+The Core Workflow,Comparing Changes,Which command shows unstaged changes?,2,git diff,git diff,teach,84
+The Core Workflow,Comparing Changes,Complete: diff only staged changes.,2,Complete: diff only staged changes.,,teach,89
+Undoing Things,Unstaging and Discarding Changes,"Complete: unstage a file, keep edits.",2,git restore,git restore,teach,94
+Undoing Things,Unstaging and Discarding Changes,git ___ file.txt discards unstaged edits.,2,git ___ file.txt discards unstaged edits.,,teach,99
+Undoing Things,Fixing Your Last Commit,Complete: fix your most recent commit.,2,git commit --amend,git commit --amend,teach,104
+Undoing Things,Reverting a Commit Safely,What does git revert do?,2,git revert,git revert,teach,109
+Undoing Things,Reverting a Commit Safely,A teammate already pulled a bad commit. Safe fix?,2,git reset,git reset,teach,114
+Undoing Things,Resetting to an Earlier Point,What does `git reset` move?,2,What does `git reset` move?,,teach,119
+Undoing Things,Resetting to an Earlier Point,Which reset mode deletes your uncommitted changes?,2,Which reset mode deletes your uncommitted changes?,,teach,124
+Branching,What a Branch Really Is,"What is a Git branch, really?",2,"What is a Git branch, really?",,teach,129
+Branching,Creating and Switching Branches,Complete: create a branch called feature.,2,checkout,checkout,teach,134
+Branching,Creating and Switching Branches,Complete: move onto the feature branch.,2,git switch|feature branch,git switch|feature branch,teach,139
+Branching,Creating and Switching Branches,Complete: create and switch to feature.,2,Complete: create and switch to feature.,,teach,144
+Branching,Merging Branches Together,Complete: merge feature into your current branch.,3,git merge,git merge,teach,148
+Branching,Merging Branches Together,When does Git do a fast-forward merge?,3,fast-forward merge,fast-forward merge,teach,153
+Branching,Merging Branches Together,How many parents does a three-way merge commit have?,3,three-way merge,three-way merge,teach,158
+Branching,Resolving a Merge Conflict,What causes a merge conflict?,3,merge conflict,merge conflict,teach,163
+Branching,Rebasing Instead of Merging,Complete: replay your commits on top of main.,3,git rebase,git rebase,teach,168
+Branching,Cleaning Up History With Interactive Rebase,What does `git rebase -i` let you do?,3,interactive rebase|squashing,interactive rebase|squashing,teach,173
+Working With Remotes,Understanding Remotes,What is a remote in Git?,3,What is a remote in Git?,,teach,178
+Working With Remotes,Pushing and Pulling,Which command sends your commits to a remote?,3,git push|git pull|git fetch,git push|git pull|git fetch,teach,183
+Working With Remotes,Fetch vs. Pull,What does `git fetch` do to your branch?,3,What does `git fetch` do to your branch?,,teach,188
+Working With Remotes,Tracking Branches,What does a tracking branch remember?,3,tracking branch,tracking branch,teach,193
+Collaborating With Others,Forks and Pull Requests,What is a GitHub fork?,3,fork|pull request,fork|pull request,teach,198
+Collaborating With Others,Writing Reviewable Commits,What makes a commit easy to review?,3,What makes a commit easy to review?,,teach,203
+Collaborating With Others,Common Team Branching Strategies,Which strategy merges tiny changes into main constantly?,3,trunk-based development|Git Flow,trunk-based development|Git Flow,teach,208
+Keeping a Repo Clean,.gitignore and What Not to Track,What does a .gitignore file do?,3,What does a .gitignore file do?,,teach,213
+Keeping a Repo Clean,Removing Untracked Files,What does git clean `-f` delete?,4,git clean,git clean,teach,218
+Digging Through History,Searching Commit History,Complete: find commits mentioning TODO.,4,git log -S,git log -S,teach,223
+Digging Through History,"Blaming a Line, Fairly",What does git blame show per line?,4,git blame,git blame,teach,228
+Digging Through History,Binary-Searching for a Bug,What does git bisect find?,4,git bisect,git bisect,teach,233
+"Tags, Stashing, and Cherry-Picks",Tagging a Release,Complete: tag the current commit as v2.0.,4,git tag,git tag,teach,238
+"Tags, Stashing, and Cherry-Picks",Stashing Work in Progress,What does `git stash` do?,4,git stash,git stash,teach,243
+"Tags, Stashing, and Cherry-Picks",Cherry-Picking a Single Commit,git ___ <commit> copies just one commit.,4,cherry-pick,cherry-pick,teach,248
+Safety and Recovery,Rewriting History Without Breaking Everyone,Which force-push option is safer?,4,Which force-push option is safer?,,teach,253
+Safety and Recovery,"Recovering ""Lost"" Commits",What does git reflog record?,4,git reflog,git reflog,teach,258
+Safety and Recovery,Common Git Mistakes and Their Fixes,"Most everyday Git mistakes have calm, known ___.",4,"Most everyday Git mistakes have calm, known ___.",,teach,263
+Beyond the Basics,"Submodules, Briefly",What does a submodule track in the parent repo?,4,submodule,submodule,teach,268
+Beyond the Basics,Handling Large Files With Git LFS,What does Git LFS replace a large file with?,4,Git LFS,Git LFS,teach,273
+Beyond the Basics,How Git Actually Stores Your Data,In Git's object model what does a blob store?,4,blob|tree object,blob|tree object,teach,278
+Review,Recap: Key Terms,Recap pack 57,4,distributed|git config|imperative mood|git commit --amend|fast-forward merge|three-way merge|merge conflict|interactive rebase|squashing|tracking branch|fork|pull request|trunk-based development|Git Flow|git clean|git log -S|git blame|git bisect|git tag|git stash|git reflog|submodule|Git LFS|blob|tree object,,review,306
