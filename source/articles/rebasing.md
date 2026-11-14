@@ -14,13 +14,13 @@ For example, `git rebase main` while you are on your feature branch puts your co
 What if you want to clean up your commits as well? An interactive rebase is a rebase with the `-i` flag. It opens a list of your recent commits in an editor, one per line, each beginning with a word that says what to do with it. You can reorder lines, change `pick` to `reword` to edit a message, to `edit` to stop there, to `drop` to remove it, or to `squash` to combine it with the one above.
 
 ## -i {#i}
-The flag `-i` is what makes a rebase interactive. For example, `git rebase -i HEAD~4` lists the last four commits.
+The flag `-i` is what makes a rebase interactive. For example, `git rebase -i HEAD~4` lists the last four commits. `HEAD` is the commit you are on now, and `~4` means four commits back from it.
 
 ## Squashing {#squashing}
 Squashing means combining several commits into one. You usually do it during an interactive rebase, to turn a sequence of messy saves, such as "wip", "fix typo" and "try again", into one clear commit.
 
 ## -x {#x}
-A word of warning about a letter that is easy to mix up. The flag `-x` does not open the interactive list, because that flag is `-i`. In `git rebase`, the real `-x` option runs a command after each commit that is replayed. If you wanted the list of commits and typed `-x`, you typed the wrong letter.
+The flag `-x` is easy to mix up with `-i`. It does not open the interactive list. In `git rebase -x "<command>"`, Git runs that command after each commit it replays, for example to run your tests on every commit. If you wanted the list of commits and typed `-x`, you typed the wrong letter.
 
 ## A worked example {#example}
 Say you made five commits on a feature branch:

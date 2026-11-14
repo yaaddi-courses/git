@@ -3,7 +3,7 @@
 **Covers:** git config, user.name, user.email, --system, --global, --local, --all
 
 ## Telling Git who you are {#overview}
-Every snapshot Git saves carries the name and email of the person who made it. Git cannot guess these, so you set them once, right after installing. The same mechanism holds many other settings, and it works on three levels, from the whole machine down to a single project. Let's look at the command first, then at the levels.
+Every snapshot Git saves carries the name and email of the person who made it. Git does not know who you are unless you tell it, and may guess otherwise, so you set them once, right after installing. The same mechanism holds many other settings, and it works on three levels, from the whole machine down to a single project. Let's look at the command first, then at the levels.
 
 ## git config {#git-config}
 `git config` reads and writes Git's settings. A setting has a name made of sections and keys, such as `user.name`, and a value. With a name and a value, the command stores the setting. With a name only, it prints the current value. With `--list`, it prints everything that applies.

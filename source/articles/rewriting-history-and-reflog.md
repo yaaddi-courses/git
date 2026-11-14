@@ -18,7 +18,7 @@ There is a safer way. `--force-with-lease` forces the push only if the remote br
 In the course, the gap in `--force-with-___` is `lease`, so the full name is `--force-with-lease`. The blank is a memory exercise and not a real option name.
 
 ## git reflog {#git-reflog}
-Now the safety net. `git reflog` shows a local log of everywhere your branches and `HEAD` have pointed, even after commits became unreachable through a reset, a rebase or a deleted branch. Each entry has a position like `HEAD@{3}` and a short note on what happened. It lives on your machine only, and entries expire after about 90 days by default.
+Now the safety net. `git reflog` shows a local log of everywhere your branches and `HEAD` have pointed, even after commits became unreachable through a reset, a rebase or a deleted branch. Each entry has a position like `HEAD@{3}` and a short note on what happened. It lives on your machine only. Entries expire after about 90 days if the commit is still reachable, and after 30 days if it is unreachable, which means no branch or tag points to it any more.
 
 ## A worked example {#example}
 Say you rebased your feature branch to tidy it, and the branch was already on the server. Now the normal push fails:

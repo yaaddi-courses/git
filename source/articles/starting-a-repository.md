@@ -14,7 +14,7 @@ It is safe to run in a folder that is already a repository. Git reports that it 
 A remote repository is found by its URL, a uniform resource locator, which is a web address such as `https://example.com/team/recipes.git`. Two styles are common. An address that starts with `https://` uses ordinary web access, and asks for a login or a token when you send data. An address of the form `git@example.com:team/recipes.git` uses an SSH key, which saves you from typing a password.
 
 ## origin {#origin}
-Typing long addresses all day would be tiring. So `origin` is the name Git gives by default to the remote you cloned from, or to the first one you connect. It is only a nickname for a URL and nothing special on the technical side. You could call it `server` or `upstream` and everything would work the same.
+Typing long addresses all day would be tiring. So `origin` is the name `git clone` gives by default to the remote you cloned from. With `git remote add`, the name is whatever you type, and `origin` is just the usual choice. It is only a nickname for a URL and nothing special on the technical side. You could call it `server` or `upstream` and everything would work the same.
 
 When you clone, Git sets up `origin` for you. When you start with `git init`, there is no remote at all until you add one.
 

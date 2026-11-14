@@ -12,7 +12,7 @@ You have finished the work on your branch, and now it has to return to the main 
 The easiest case is a fast-forward merge. It happens when your branch has not diverged from the one being merged. If `main` has had no new commits since you branched off, Git can slide the `main` label forward to your newest commit. No new commit is made, and the history stays a straight line.
 
 ## Three-way merge {#three-way-merge}
-What if `main` moved too? A three-way merge happens when both branches have new commits since they split. Git looks at three points: the common ancestor, the tip of one branch and the tip of the other. It combines the changes into one new commit, called a merge commit, which has two parents. The history then shows the split and the join.
+What if `main` moved too? A three-way merge happens when both branches have new commits since they split. Git looks at three points: the common ancestor (the last commit both branches share), the tip of one branch and the tip of the other. It combines the changes into one new commit, called a merge commit, which has two parents. The history then shows the split and the join.
 
 ## Merge conflict {#merge-conflict}
 Sometimes the two sets of changes cannot be combined automatically. A merge conflict occurs when both branches changed the same lines of a file in different ways. Git cannot guess which version you want, so it stops, marks the file and waits. The merge is paused, not lost, and you can still cancel it with `git merge --abort`.
@@ -53,7 +53,7 @@ git merge --log add-search-box
 
 Git makes a merge commit, `f012`, with two parents: `d7e8` and `c4d1`. The history now has a diamond shape. The message includes the one-line list of your two commits, because of `--log`.
 
-**Case 3: conflict.** Your colleague's commit `d7e8` also changed the first line of `menu.txt`, as you did.
+**Case 3: conflict.** Now suppose your colleague's commit `d7e8` had changed the first line of `menu.txt`, as you did.
 
 ```text
 Auto-merging menu.txt
@@ -76,7 +76,7 @@ If it feels too hard, `git merge --abort` returns everything to the state before
 | Both moved, different lines | Three-way merge, new merge commit, no conflict |
 | Both changed the same lines | Merge conflict, you decide |
 
-Conflicts are normal, and they are not a sign that you did something wrong. In a team of 5 working on the same files, they happen every week. They stay small when branches are short and when you merge `main` into your branch often.
+Conflicts are normal, and they are not a sign that you did something wrong. In a team of 5 working on the same files, they happen often. They stay small when branches are short and when you merge `main` into your branch often.
 
 ## A common mistake {#mistake}
 A common slip is committing a file that still contains the `<<<<<<<` markers. Search for them before you stage, or use the project's tests.
